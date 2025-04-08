@@ -1,0 +1,106 @@
+:root {
+   --side-padding: 16.5%;
+   --font: Roboto;
+   --dark-bg-color-hero-footer: #1f2937;
+   --hero-main-text-size: 48px;
+   --hero-main-text-color: #f9faf8;
+   --hero-main-text-weight: 900;
+   --hero-secondary-text-size: 18px;
+   --hero-secondary-text-color: #e5e7eb;
+   --header-logo-text-size: 24px;
+   --header-logo-text-color: #f9faf8;
+   --button-and-cta-bg-color: #3882F6;
+   --information-header-text-size: 36px;
+   --information-header-text-color: #1F2937;
+   --information-header-text-weight: 900;
+   --quote-section-bg-color: #E5E7EB;
+   --quote-text-size: 36px;
+   --quote-text-weight: light;
+   --quote-text-style: italic;
+   --quote-text-color: #1F2937;
+}
+
+/* === RESET === */
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+/* === BASE STYLES === */
+body {
+   font-family: var(--font);
+   /* line-height: 1.5; */
+   background-color: white;
+   color: black;
+}
+
+/* === LINKS === */
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+/* === IMAGES === */
+img {
+   max-width: 100%;
+   height: auto;
+   display: block;
+}
+
+/* === BUTTONS === */
+button {
+   font-family: inherit;
+   font-size: 1rem;
+   border: none;
+   cursor: pointer;
+}
+
+/* === LISTS === */
+ul,
+ol {
+   list-style: none;
+}
+
+/* DEBUG */
+* {
+   /* outline: 2px dashed red; */
+}
+
+/* Custom CSS */
+/* Custom CSS */
+/* Custom CSS */
+
+
+.header, .header > .link-group {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.header > .link-group {
+   gap: 1rem;
+}
+
+.header, .hero-banner {
+   padding: 1rem var(--side-padding);
+   background-color: var(--dark-bg-color-hero-footer);
+   color: var(--hero-main-text-color);
+}
+
+.hero-banner {
+   display: flex;
+   gap: 1rem;
+   padding: 4rem var(--side-padding);
+}
+
+.hero-banner .text-group {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.hero-banner img {
+   height: 100%;
+   width: 1;
+}
