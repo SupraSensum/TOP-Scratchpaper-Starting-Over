@@ -15,7 +15,7 @@
    --information-header-text-weight: 900;
    --quote-section-bg-color: #E5E7EB;
    --quote-text-size: 36px;
-   --quote-text-weight: light;
+   --quote-text-weight: lighter;
    --quote-text-style: italic;
    --quote-text-color: #1F2937;
 }
@@ -168,4 +168,24 @@ ol {
    text-align: center;
    color: var(--quote-text-color);
    font-size: var(--hero-secondary-text-size);
+}
+
+/* QUOTE SECTION */
+
+.quote-section {
+   padding: 6rem 25% 5rem 25%;
+   background-color: var(--quote-section-bg-color);
+}
+
+.quote-section .quote {
+   font-size: var(--quote-text-size);
+   font-style: var(--quote-text-style);
+   font-weight: var(--quote-text-weight);
+   color: var(--quote-text-color);
+}
+
+.quote-section .attribution {
+   text-align: right;
+   font-weight: bolder;
+   color: var(--quote-text-color);
 }
