@@ -66,6 +66,8 @@ ol {
 /* Custom CSS */
 /* Custom CSS */
 
+/* HEADER */
+
 .header .logo-text {
    font-size: var(--header-logo-text-size);
    color: var(--header-logo-text-color);
@@ -86,6 +88,8 @@ ol {
    background-color: var(--dark-bg-color-hero-footer);
    color: var(--hero-main-text-color);
 }
+
+/* HERO BANNER */
 
 .hero-banner {
    display: flex;
@@ -129,3 +133,43 @@ ol {
    color: var(--hero-secondary-text-color);
 }
 
+/* RANDOM INFO */
+
+.random-info {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 2rem;
+   padding: 2rem 25% 4rem 25%;
+}
+
+.random-info * {
+   /* outline: 2px dashed red; */
+}
+
+.random-info .illustrations {
+   display: flex;
+   gap: 1rem;
+}
+
+.random-info .illustrations > div{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 0.5rem;
+}
+
+.random-info .illustrations img {
+   /* height: 5rem; */
+   /* width: 5rem; */
+   width: 100%;
+   aspect-ratio: 1 / 1;
+   border: 3px solid var(--button-and-cta-bg-color);
+   border-radius: 0.5rem;
+}
+
+.random-info .illustrations div > p {
+   text-align: center;
+   color: var(--quote-text-color);
+   font-size: var(--hero-secondary-text-size);
+}
