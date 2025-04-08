@@ -143,10 +143,6 @@ ol {
    padding: 2rem 25% 4rem 25%;
 }
 
-.random-info * {
-   /* outline: 2px dashed red; */
-}
-
 .random-info .illustrations {
    display: flex;
    gap: 1rem;
