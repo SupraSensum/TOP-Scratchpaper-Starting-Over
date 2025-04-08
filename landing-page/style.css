@@ -143,6 +143,13 @@ ol {
    padding: 2rem 25% 4rem 25%;
 }
 
+.random-info h2 {
+   font-weight: var(--information-header-text-weight);
+   color: var(--information-header-text-color);
+   font-size: var(--information-header-text-size);
+   text-align: center;
+}
+
 .random-info .illustrations {
    display: flex;
    gap: 1rem;
