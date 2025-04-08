@@ -62,15 +62,14 @@ ol {
    list-style: none;
 }
 
-/* DEBUG */
-* {
-   /* outline: 2px dashed red; */
+/* Custom CSS */
+/* Custom CSS */
+/* Custom CSS */
+
+.header .logo-text {
+   font-size: var(--header-logo-text-size);
+   color: var(--header-logo-text-color);
 }
-
-/* Custom CSS */
-/* Custom CSS */
-/* Custom CSS */
-
 
 .header, .header > .link-group {
    display: flex;
@@ -100,7 +99,33 @@ ol {
    gap: 0.5rem;
 }
 
-.hero-banner img {
-   height: 100%;
-   width: 1;
+.hero-image-container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: gray;
 }
+
+.hero-banner img {
+   text-align: center;
+}
+
+.hero-banner h1 {
+   font-size: var(--hero-main-text-size);
+   font-weight: var(--hero-main-text-weight);
+   color: var(--hero-main-text-color);
+}
+
+.hero-banner p {
+   font-size: var(--hero-secondary-text-size);
+   color: var(--hero-secondary-text-color);
+}
+
+.hero-banner button {
+   background-color: var(--button-and-cta-bg-color);
+   align-self: flex-start;
+   padding: 10px 2rem;
+   border-radius: 0.5rem;
+   color: var(--hero-secondary-text-color);
+}
+
