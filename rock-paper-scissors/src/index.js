@@ -26,30 +26,48 @@ function getHumanChoice() {
 function playRound(humanChoice, computerChoice) {
    humanChoice = humanChoice.toLowerCase();
 
-   let humanWins = false;
+   const result = determineOutcome(humanChoice, computerChoice);
+   updateScore(result);
+   reportRound(result, humanChoice, computerChoice);
+}
 
-   if (humanChoice === computerChoice)
-      humanWins = "tie";
-   else if (humanChoice === "rock" && computerChoice === "scissors")
-      humanWins = true;
-   else if (humanChoice === "paper" && computerChoice === "rock")
-      humanWins = true;
-   else if (humanChoice === "scissors" && computerChoice === "paper")
-      humanWins = true;
+function determineOutcome(h, c) {
+   const wins = {
+      rock: "scissors",
+      paper: "rock",
+      scissors: "paper"
+   };
 
-   if (humanWins === "tie") {
-      console.log(`It's a tie! You both played ${humanChoice}`);
-      tie++;
-   } else if (humanWins === true) {
-      console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+   if (h === c)
+      return "tie";
+   else if (wins[h] === c)
+      return "win";
+   else if (wins[c] === h)
+      return "lose";
+   else
+      return null;
+}
+
+function updateScore(result) {
+   if (result === "win")
       humanScore++;
-   } else if (humanWins === false) {
-      console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+   else if (result === "lose")
       computerScore++;
-   } else {
-      console.error("Unexpected error!");
-      console.error({humanWins});
-   }
+   else if (result === "tie")
+      tie++;
+   else
+      console.error("Unexpected error");
+}
+
+function reportRound(result, h, c) {
+   if (result === "win")
+      console.log(`You ${result}! ${h} beats ${c}`);
+   else if (result === "lose")
+      console.log(`You ${result}! ${c} beats ${h}`);
+   else if (result === "tie")
+      console.log(`It's a ${result}! Both drew ${h}`);
+   else
+      console.error("Unexpected error");
 }
 
 function playGame(numRounds) {
@@ -57,7 +75,9 @@ function playGame(numRounds) {
       playRound(getComputerChoice(), getComputerChoice());
    }
 
-   console.log({humanScore, computerScore, tie});
+   const sum = humanScore + computerScore + tie;
+   const sumCheck = sum === numRounds;
+   console.log({humanScore, computerScore, tie, sum, sumCheck});
 
    humanScore = 0;
    computerScore = 0;
