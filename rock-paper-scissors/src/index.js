@@ -15,7 +15,7 @@ function getRandValFromZeroTo(maxValExclusive) {
 }
 
 function getComputerChoice() {
-   randomIndex = getRandValFromZeroTo(items.length);
+   const randomIndex = getRandValFromZeroTo(items.length);
    return items[randomIndex];
 }
 
