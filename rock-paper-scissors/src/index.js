@@ -2,6 +2,7 @@ console.log("hello, world!");
 
 let computerScore = 0;
 let humanScore = 0;
+let tie = 0;
 
 const items = [
    "rock",
@@ -27,43 +28,27 @@ function playRound(humanChoice, computerChoice) {
 
    let humanWins = false;
 
-   // rock > scissors
-   // paper > rock
-   // scissors > paper
-
-   // switch(humanChoice) {
-   //    case "rock":
-   //       if (computerChoice === "scissors") {
-   //          humanWins = true;
-   //       }
-   //       break;
-   //    case "paper":
-   //       if(computerChoice === "rock") {
-   //          humanWins = true;
-   //       }
-   //       break;
-   //    case "scissors":
-   //       if (computerChoice === "paper") {
-   //          humanWins = true;
-   //       }
-   //       break;
-   //    default:
-   //       humanWins = null;
-   // }
-
-   if (humanChoice === "rock" && computerChoice === "scissors")
+   if (humanChoice === computerChoice)
+      humanWins = "tie";
+   else if (humanChoice === "rock" && computerChoice === "scissors")
       humanWins = true;
    else if (humanChoice === "paper" && computerChoice === "rock")
       humanWins = true;
    else if (humanChoice === "scissors" && computerChoice === "paper")
       humanWins = true;
 
-   if (humanWins) {
+   if (humanWins === "tie") {
+      console.log(`It's a tie! You both played ${humanChoice}`);
+      tie++;
+   } else if (humanWins === true) {
       console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
       humanScore++;
-   } else {
+   } else if (humanWins === false) {
       console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
-      computerScore++
+      computerScore++;
+   } else {
+      console.error("Unexpected error!");
+      console.error({humanWins});
    }
 }
 
@@ -72,10 +57,11 @@ function playGame(numRounds) {
       playRound(getComputerChoice(), getComputerChoice());
    }
 
-   console.log({humanScore, computerScore});
+   console.log({humanScore, computerScore, tie});
 
    humanScore = 0;
    computerScore = 0;
+   tie = 0;
 }
 
 function runRandomnessStats(cycles) {
