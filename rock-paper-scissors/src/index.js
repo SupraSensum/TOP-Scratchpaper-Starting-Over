@@ -70,7 +70,7 @@ function reportRound(result, h, c) {
       console.error("Unexpected error");
 }
 
-function playGame(numRounds) {
+function playBotGame(numRounds) {
    for (let i = 0; i < numRounds; i++) {
       playRound(getComputerChoice(), getComputerChoice());
    }
@@ -78,6 +78,21 @@ function playGame(numRounds) {
    const sum = humanScore + computerScore + tie;
    const sumCheck = sum === numRounds;
    console.log({humanScore, computerScore, tie, sum, sumCheck});
+
+   humanScore = 0;
+   computerScore = 0;
+   tie = 0;
+}
+
+function playGame(numRounds) {
+   for (let i = 0; i < numRounds; i++) {
+      const humanChoice = getHumanChoice();
+      playRound(humanChoice, getComputerChoice());
+   }
+
+   const sum = humanScore + computerScore + tie;
+   const sumCheck = sum === numRounds;
+   console.log({ humanScore, computerScore, tie, sum, sumCheck });
 
    humanScore = 0;
    computerScore = 0;
