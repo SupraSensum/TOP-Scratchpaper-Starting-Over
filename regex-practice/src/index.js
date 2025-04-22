@@ -25,3 +25,12 @@ console.log(matches3);
 // my answer
 // abc, ac
 // sweet, I was right
+
+// 1. Match “gd”, “god”, “good”, “goooood” but NOT “gdd” or “gobd”
+const regex1 = /YOUR_REGEX/;
+const inputs1 = ["gd", "god", "good", "goooood", "gdd", "gobd"];
+const expected1 = ["gd", "god", "good", "goooood"];
+const result1 = inputs1.filter(s => regex1.test(s));
+console.log(result1.toString() === expected1.toString());
+
+// fuck that, I'm using this instead: https://www.regexone.com
