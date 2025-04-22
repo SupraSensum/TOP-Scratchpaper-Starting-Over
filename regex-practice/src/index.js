@@ -6,3 +6,6 @@ console.log(matches1);
 
 // my answer
 // abc, abbbc, abb bc
+// fuck, I was wrong because
+// 1. * allows 0 b's and
+// 2. "abb bc" is not a sequence of b's... " " (space) is not a "b", lol
