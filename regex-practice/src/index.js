@@ -16,3 +16,11 @@ console.log(matches2);
 
 // my answer
 // ac abc abbc abbbc abbbbbc
+// sweet, I was right
+
+const str3 = "bbbc bbbc abc ac";
+const matches3 = str3.match(/ab*c/g);
+console.log(matches3);
+
+// my answer
+// abc, ac
