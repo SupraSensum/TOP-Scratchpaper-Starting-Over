@@ -9,3 +9,10 @@ console.log(matches1);
 // fuck, I was wrong because
 // 1. * allows 0 b's and
 // 2. "abb bc" is not a sequence of b's... " " (space) is not a "b", lol
+
+const str2 = "ac abc abbc abbbc abbbbbc";
+const matches2 = str2.match(/ab*c/g);
+console.log(matches2);
+
+// my answer
+// ac abc abbc abbbc abbbbbc
